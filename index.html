@@ -16,7 +16,7 @@
     </header>
     <main>
         <div class="book-container">
-            <div class="book-item">
+            <div class="book-item static">
                 <h2>The Great Gatsby</h2>
                 <p>F. Scott Fitzgerald</p>
                 <p>2018</p>
@@ -26,38 +26,39 @@
                     <button class="btn-delete">Delete</button>
                 </div>           
             </div>
-            <div class="btn-add" id="add-book-btn">
+            <div class="add-book-btn static" id="add-book-btn">
                 <button>Add a book</button>
             </div>
-            <dialog class="book-dialog" id="book-dialog">
-                <h2>Add a book</h2>
-                <form class="book-form" id="add-book-form">
-                    <div class="form-group">
-                        <label for="book-title">Title</label>
-                        <input type="text" id="book-title" name="book-title" required>
-                    </div>
-    
-                    <div class="form-group">
-                        <label for="book-author">Author</label>
-                        <input type="text" id="book-author" name="book-author" required>
-                    </div>
-    
-                    <div class="form-group">
-                        <label for="page-count">Page count</label>
-                        <input type="number" id="page-count" name="page-count" min="1" required>
-                    </div>
-    
-                    <div class="form-group">
-                        <label for="book-year">Year</label>
-                        <input type="number" id="book-year" name="book-year" min="1000" max="9999" required>
-                    </div>                    
+        </div>
+        <dialog class="book-dialog" id="book-dialog">
+            <h2>Add a book</h2>
+            <form class="book-form" id="add-book-form">
+                <div class="form-group">
+                    <label for="book-title">Title</label>
+                    <input type="text" id="book-title" name="book-title" required>
+                </div>
 
-                    <div class="form-buttons">
-                        <button type="submit">Add book</button>
-                        <button type="button" id="cancel-btn">Cancel</button>
-                    </div>
-                </form>
-            </dialog>
+                <div class="form-group">
+                    <label for="book-author">Author</label>
+                    <input type="text" id="book-author" name="book-author" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="page-count">Page count</label>
+                    <input type="number" id="page-count" name="page-count" min="1" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="book-year">Year</label>
+                    <input type="number" id="book-year" name="book-year" min="1000" max="9999" required>
+                </div>                    
+
+                <div class="form-buttons">
+                    <button type="submit">Add book</button>
+                    <button type="button" id="cancel-btn">Cancel</button>
+                </div>
+            </form>
+        </dialog>
     </main>
     <div class="modal-background"></div>
 </body>

@@ -51,6 +51,8 @@ main {
     grid-row: 2;
 }
 
+/* book container */
+
 .book-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -81,7 +83,6 @@ main {
 
 .btn-books button {
     color: #f6f6f9;
-    border: none;
     padding: 0.5rem 1rem;
     border-radius: 0.5rem; 
     transition: background-color 0.3s ease;
@@ -103,13 +104,13 @@ main {
     background-color: #580303;
 }
 
-.btn-add {
+.add-book-btn {
     display: flex;
     justify-content: center;
     align-items: stretch;
 }
 
-.btn-add button {
+.add-book-btn button {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -121,19 +122,21 @@ main {
     border-radius: 0.5rem;
     font-size: 1rem;
     width: 100%;
-    height: 80%;
+    height: 100%;
     padding: 1rem;
     transition: background-color 0.3s ease;
 }
 
-.btn-add button:hover {
+.add-book-btn button:hover {
     background-color: hsl(from var(--primary-color) h s l / .75);
 }
 
-
+.btn-books button,
+.book-form button {
+    border: 1px solid #f6f6f9;
+    border-radius: 4px;
+}
 /* Book form */
-
-/* ... (previous CSS remains unchanged until the .btn-add button:hover) ... */
 
 .book-dialog {
     padding: 0;
@@ -181,7 +184,7 @@ main {
     width: 100%;
     padding: 0.5rem;
     border: none;
-    border-radius: 8px;
+    border-radius: 4px;
     background-color: #ffffffce;
     color: var(--primary-color);
 }
@@ -200,8 +203,6 @@ main {
 .book-form button {
     flex: 1;
     padding: 0.75rem;
-    border: 1px solid #f6f6f9;
-    border-radius: 0.5rem;
     background-color: transparent;
     color: #f6f6f9;
     cursor: pointer;
@@ -223,5 +224,3 @@ main {
 .book-form button[type="button"]:hover {
     background-color: #580303;
 }
-
-/* Remove the modal-background styles as they're no longer needed */
