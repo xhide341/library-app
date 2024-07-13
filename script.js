@@ -20,7 +20,6 @@ const pageCount = document.getElementById('page-count');
 const bookYear = document.getElementById('book-year');
 const myLibrary = [];
 
-// Initialize the library with the static book
 const staticBook = new Book("The Great Gatsby", "F. Scott Fitzgerald", 12, 2018);
 myLibrary.push(staticBook);
 
@@ -92,8 +91,6 @@ function renderBooks() {
     });
 }
 
-// Add event listener to the form
 bookForm.addEventListener('submit', addBookToLibrary);
 
-// Initial render of books
 renderBooks();
