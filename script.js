@@ -20,7 +20,9 @@ const pageCount = document.getElementById('page-count');
 const bookYear = document.getElementById('book-year');
 const myLibrary = [];
 
-bookForm.addEventListener('submit', addBookToLibrary);
+// Initialize the library with the static book
+const staticBook = new Book("The Great Gatsby", "F. Scott Fitzgerald", 12, 2018);
+myLibrary.push(staticBook);
 
 function Book(title, author, pageCount, year) {
     this.title = title;
@@ -55,30 +57,43 @@ function createCard(book, index) {
             <button class="btn-delete">Delete</button>
         </div>           
     `;
+    
+    addButtonListeners(card, book, index);
+    
+    return card;
+}
 
-    const statusBtn = card.querySelector('.btn-status');
+function addButtonListeners(cardElement, book, index) {
+    const statusBtn = cardElement.querySelector('.btn-status');
+    const deleteBtn = cardElement.querySelector('.btn-delete');
+
     statusBtn.addEventListener('click', () => {
         book.read = !book.read;
         renderBooks();
     });
 
-    const deleteBtn = card.querySelector('.btn-delete');
     deleteBtn.addEventListener('click', () => {
         myLibrary.splice(index, 1);
         renderBooks();
     });
-
-    return card;
 }
 
 function renderBooks() {
     const booksContainer = document.querySelector('.book-container');
     
+    // Clear existing dynamically added book items from the DOM
     const existingBooks = booksContainer.querySelectorAll('.book-item:not(.static)');
     existingBooks.forEach(book => book.remove());
 
+    // Render all books in the library
     myLibrary.forEach((book, index) => {
-        const newBookElement = createCard(book, index);
-        booksContainer.insertBefore(newBookElement, booksContainer.lastElementChild);
+            const newBookElement = createCard(book, index);
+            booksContainer.insertBefore(newBookElement, booksContainer.lastElementChild)
     });
 }
+
+// Add event listener to the form
+bookForm.addEventListener('submit', addBookToLibrary);
+
+// Initial render of books
+renderBooks();
