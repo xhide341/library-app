@@ -48,9 +48,9 @@ function createCard(book, index) {
     card.classList.add('book-item');
     card.innerHTML = `
         <h2>${book.title}</h2>
-        <p>${book.author}</p>
+        <p>by ${book.author}</p>
         <p>${book.pageCount} pages</p>
-        <p>${book.year}</p>
+        <p>Year published: ${book.year}</p>
         <div class="btn-books">
             <button class="btn-status">${book.read ? 'Mark as unread' : 'Mark as read'}</button>
             <button class="btn-delete">Delete</button>
